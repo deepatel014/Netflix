@@ -28,6 +28,7 @@ Accordion.Item = function AccordionItem({children, ...restProps}){
 };
 
 Accordion.Header = function AccordionHeader({children, ...restProps}){
+    // eslint-disable-next-line no-unused-vars
     const {toggleShow,setToggleShow} = useContext(ToggleContext);
     return( 
         <Header onClick={() => setToggleShow(toggleShow => !toggleShow)}{...restProps}>{children}</Header>
