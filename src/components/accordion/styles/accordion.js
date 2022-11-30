@@ -21,8 +21,17 @@ export const Title = styled.h1`
     text-align: center;
 
 
-@media (max-width: 600px) {
+@media (max-width: 780px) {
     font-size: 35px;
+    
+}
+
+@media (max-width: 600px) {
+    font-size: 25px;
+    
+}
+@media (max-width: 450px) {
+    font-size: 12px;
     
 }
 `;
@@ -79,6 +88,8 @@ export const Frame = styled.div`
 export const Item = styled.div`
     color: white;
     margin-bottom: 10px;
+    margin:auto;
+    width:100%;
     max-width:670px;
     &:first-of-type{
         margin-top: 3em;
