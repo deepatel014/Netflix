@@ -90,7 +90,9 @@ export const Item = styled.div`
     margin-bottom: 10px;
     margin:auto;
     width:100%;
-    max-width:670px;
+    max-width:700px;
+    width: 100%;
+    
     &:first-of-type{
         margin-top: 3em;
         
