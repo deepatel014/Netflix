@@ -4,6 +4,7 @@ import App from './App';
 import 'normalize.css';
 import { BrowserRouter } from 'react-router-dom';
 import {GlobalStyles} from './global-styles';
+import { app } from './lib/firebase.prod';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
