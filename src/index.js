@@ -5,13 +5,16 @@ import 'normalize.css';
 import { BrowserRouter } from 'react-router-dom';
 import {GlobalStyles} from './global-styles';
 import { firebase } from './lib/firebase.prod';
+import { FirebaseContext } from './context/firebase';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <>
     <BrowserRouter>
-        <GlobalStyles/>
-        <App />
+        <FirebaseContext.Provider value = {{firebase}}>
+            <GlobalStyles/>
+            <App />
+        </FirebaseContext.Provider>
     </BrowserRouter>
     </>
 );
