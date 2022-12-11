@@ -4,8 +4,8 @@ import HeaderContainer  from "../containers/header";
 import { Form } from "../components/index";
 
 export default function Signin(){
-    const [emailAddress, setEmailAddress] = useState();
-    const [password, setPassword] = useState();
+    const [emailAddress, setEmailAddress] = useState('');
+    const [password, setPassword] = useState('');
     const [error, setError] = useState('');
 
     // check form input elements are valid
@@ -35,6 +35,10 @@ export default function Signin(){
                     value = {password}
                     onChange = {({target}) => setPassword(target.value)} />
                 <Form.Submit disabled = {isInvalid} type= "submit" >Sign IN</Form.Submit>
+                <Form.Text>
+                    New to netflix? <Form.Link to="/signup">Sign up now!</Form.Link>
+                </Form.Text>
+                <Form.TextSmall>This page is protected by google reCAPTCHA to ensure you're not a bot. Learn More.</Form.TextSmall>
             </Form.Base>
         </Form>
         </HeaderContainer>
