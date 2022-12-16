@@ -1,23 +1,19 @@
 import React from "react";
-import { Route,Navigate} from "react-router-dom";
+import {Outlet, Navigate} from "react-router-dom";
+import * as ROUTES from '../constants/routes';
 
-export default function IsUserRedirect({user,loggedInPath,children,...rest}){
+const auth = false;
+
+export  function IsUserRedirect(){
+    // const navigate = useNavigate()
     return(
-        <Route
-            {...rest}
-            render={()=>{
-                if(!user){
-                    return children;
-                }
+        auth ? <Navigate to = {ROUTES.BROWSE}/> : <Outlet/>
+    )
+}
 
-                if(user){
-                    return(
-                        <Navigate replace to={{pathname:loggedInPath,}}/>
-                    );  
-                }
-                return null;
-                }
-            }   
-        />
+export function ProtectedRedirect(){
+    // const [auth,setAuth] = useState(false);
+    return(  
+        auth ? <Outlet/> : <Navigate to={ROUTES.SIGN_IN}/>
     )
 }
